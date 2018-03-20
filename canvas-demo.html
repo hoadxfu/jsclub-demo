@@ -1,0 +1,70 @@
+<!doctype html>
+<html>
+
+<head></head>
+
+<body>
+  <canvas id="myCanvas" width="300" height="200" style="border: 1px solid #000;">
+  </canvas>
+  <script>
+    const WIDTH = 300,
+      HEIGHT = 200;
+
+    function random(start, end) {
+      return Math.floor((Math.random() * end) + start);
+    }
+
+    function Cirle(size, x, y, angle) {
+      this.size = size;
+      this.x = x;
+      this.y = y;
+      this.speed = 1;
+      this.angle = Math.PI / 4;
+      this.color = 'rgb(' + random(0, 255) + ', ' + random(0, 255) + ', ' + random(0, 255) + ')';
+    }
+    Cirle.prototype.draw = function (ctx) {
+      ctx.beginPath();
+      ctx.arc(this.x, this.y, this.size, 0, 2 * Math.PI);
+      ctx.fillStyle = this.color;
+      ctx.fill();
+    }
+    Cirle.prototype.move = function () {
+      var x = this.x;
+      var y = this.y;
+      x += this.speed * Math.sin(this.angle);
+      y += this.speed * Math.cos(this.angle);
+      if (x - this.size < 0 || x + this.size > WIDTH) {
+        // left & right
+        this.angle = -this.angle;
+      }
+      if (y - this.size < 0 || y + this.size > HEIGHT) {
+        // top & bottom
+        this.angle = Math.PI - this.angle;
+      }
+      this.x = x;
+      this.y = y;
+    }
+
+    var c = document.getElementById('myCanvas');
+    var ctx = c.getContext('2d');
+    var balls = [];
+    for (i = 0; i < 3; i++) {
+      balls.push(new Cirle(
+        random(10, 20),
+        random(20, c.width - 20),
+        random(20, c.height - 20),
+        random(0, Math.PI/3)
+      ));
+    }
+    setInterval(() => {
+      ctx.clearRect(0, 0, c.width, c.height);
+      for (i = 0; i < balls.length; i++) {
+        balls[i].draw(ctx, 20, 30);
+        balls[i].move();
+      }
+    }, 1000 / 60);
+
+  </script>
+</body>
+
+</html>

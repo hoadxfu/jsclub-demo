@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>JS Class</title>
+</head>
+
+<body>
+  <script>
+    class Person {
+      constructor(firstName, lastName) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+      }
+      fullName = function () {
+        return firstName + " " + lastName;
+      }
+    }
+
+    var p = new Person("Hoa", "Duong");
+    console.log(p.fullName());
+  </script>
+</body>
+
+</html>

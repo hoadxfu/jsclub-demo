@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>JS Dom HMTL</title>
+  </head>
+  <body>
+    <div id="table"></div>
+    <script>
+      var table = document.createElement('table');
+      var row;
+      var header = table.createTHead();
+      row = header.insertRow(0);
+      row.insertCell(0).innerHTML = 'ID';
+      row.insertCell(1).innerHTML = 'Name';
+      row.insertCell(2).innerHTML = 'Gender';
+      
+      var body = table.createTBody();
+      row = body.insertRow(0);
+      row.insertCell(0).innerHTML = '1';
+      row.insertCell(1).innerHTML = 'Nguyen Van A';
+      row.insertCell(2).innerHTML = 'Male';
+
+      document.getElementById('table').appendChild(table);
+    </script>
+  </body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>JS Object</title>
+</head>
+
+<body>
+  <script>
+    // var person = new Object();
+
+    // person.last_name = "Hoa";
+    // person.first_name = "Duong";
+    
+    // person.full_name = function () {
+    //   console.log(this.last_name + " " + this.first_name);
+    // }
+
+    // person.full_name();
+
+    // class Person
+    function Person(firstName, lastName, age) {
+      this.firstName = firstName;
+      this.lastName = lastName;
+      this.age = age;
+    }
+
+    Person.prototype.fullName = function () {
+      return this.firstName + " " + this.lastName; 
+    }
+    
+    var p = new Person('Hoa', 'Duong', 21);
+    console.log(p.firstName);
+    console.log(p.fullName());
+  </script>
+</body>
+
+</html>

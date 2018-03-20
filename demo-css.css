@@ -1,0 +1,30 @@
+/* p {
+  color: red
+} */
+body {
+  background-color: lightblue;
+}
+p {
+  /* border-style: dotted;
+  border-width: 5px;
+  border-color: #209f1b; */
+  /* border: 5px dotted #209f1b;
+  margin: 100px;
+  padding: 20px; */
+}
+
+.tag-p1 {
+  border: 5px dotted #209f1b;
+  margin: 100px;
+  padding: 20px;
+  color: red;
+}
+.tag-active {
+  color: yellow;
+}
+#abc {
+  /* color: blue; */
+}
+custom-tag {
+  color: red;
+}

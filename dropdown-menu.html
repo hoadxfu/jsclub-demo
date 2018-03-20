@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Dropdown Menu</title>
+  <style>
+    ul {
+      list-style-type: none;
+      padding: 0;
+      margin: 0;
+    }
+  
+    .menu {
+      background-color: #1AC2A1;
+      width: 100%;
+      float: left;
+      position: relative;
+    }
+  
+    .menu a {
+      color: #fff;
+      text-decoration: none;
+      padding: 15px;
+      display: block;
+    }
+  
+    .menu>li {
+      float: left;
+    }
+  
+    .menu li {
+      position: relative;
+    }
+  
+    .menu>li>a {
+      text-align: center;
+    }
+  
+    .menu ul {
+      display: none;
+      position: absolute;
+      background-color: #1AC2A1;
+      width: 100px;
+    }
+  
+    .menu ul ul {
+      left: 100px;
+      top: 0;
+    }
+  
+    .menu li:hover>ul {
+      display: block;
+    }
+  
+    .menu li a:hover {
+      background-color: green;
+    }
+  </style>
+  <script>
+    function foo() {
+      console.log(this.bar);
+    }
+    var obj = {
+      bar: "hello",
+      foo: foo
+    };
+    console.log(obj.foo());
+    var arr = [
+      1, 4, 6, "abcad", 'qeqe'
+    ];
+    console.log(arr);
+    console.log(arr[2]);
+    console.log(arr[3]);
+
+    func1(1, 2, 4);
+    func2(3, 4, 5);
+
+    function func1 (param1, param2, param3 = 3) {
+      console.log(param1, param2, param3);
+    }
+
+    var func2 = (param1, param2, param3 = 3) => {
+      console.log(param1, param2, param3);
+    }
+    
+  </script>
+</head>
+
+<body>
+  <ul class="menu">
+    <li>
+      <a href="#">Home</a>
+    </li>
+    <li>
+      <a href="#">Frontend Design</a>
+      <ul class="sub-menu"><!-- sub menu -->
+        <li>
+          <a href="#">HTML</a>
+        </li>
+        <li>
+          <a href="#">CSS</a>
+          <ul class="sub-menu"><!-- sub menu -->
+            <li>
+              <a href="#">Resets</a>
+            </li><!-- end item -->
+            <li>
+              <a href="#">Grids</a>
+              <ul class="sub-menu">
+                <!-- sub menu -->
+                <li>
+                  <a href="#">Resets</a>
+                </li>
+                <!-- end item -->
+                <li>
+                  <a href="#">Grids</a>
+                </li>
+                <!-- end item -->
+                <li>
+                  <a href="#">Frameworks</a>
+                </li>
+                <!-- end item -->
+              </ul>
+              <!-- end sub menu -->
+            </li><!-- end item -->
+            <li>
+              <a href="#">Frameworks</a>
+            </li><!-- end item -->
+          </ul><!-- end sub menu -->
+        </li>
+        <li>
+          <a href="#">JS</a>
+        </li>
+      </ul><!-- end sub menu -->
+    </li>
+    <li>
+      <a href="#">WordPress Develop</a>
+    </li>
+  </ul>
+  <h1 style="clear: both;">Dropdown Menu</h1>
+</body>
+
+</html>
